@@ -1,0 +1,10 @@
+Library
+.vs
+Assembly-CSharp.csproj
+/Temp
+/obj/Debug/*.cache
+/Assets/Audio/Necromancer OST/NV2_1.wav
+/Assets/Audio/Necromancer OST/NV2_2.wav
+/Assets/Audio/Necromancer OST/Level 1.wav
+/ProjectSettings/QualitySettings.asset
+/ProjectSettings/Packages/com.unity.probuilder/Settings.json
