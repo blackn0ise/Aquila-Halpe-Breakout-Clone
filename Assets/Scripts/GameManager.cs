@@ -11,7 +11,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] private GameObject brick = default;
+    [SerializeField] private GameObject brickPrefab = default;
     [SerializeField] private GameObject brickStartPosition = default;
     [SerializeField] private int brickColumns = 10;
     [SerializeField] private int brickRows = 5;
@@ -31,9 +31,9 @@ public class GameManager : MonoBehaviour
 
     private void SetBrickDimensions()
 	{
-        Debug.Log(brick.GetComponent<BoxCollider2D>().bounds);
-        brickWidth = brick.GetComponent<BoxCollider2D>().bounds.extents.x;
-        brickHeight = brick.GetComponent<BoxCollider2D>().bounds.extents.y;
+        Debug.Log(brickPrefab.GetComponent<BoxCollider2D>().bounds);
+        brickWidth = brickPrefab.GetComponent<BoxCollider2D>().bounds.extents.x;
+        brickHeight = brickPrefab.GetComponent<BoxCollider2D>().bounds.extents.y;
     }
 
 	private void CreateBricks()
@@ -44,7 +44,8 @@ public class GameManager : MonoBehaviour
 		{
             for (int j = 0; j < brickColumns; j++)
             {
-                Instantiate(brick, brickPositionIterator, Quaternion.identity, null);
+                GameObject brickInstance = Instantiate(brickPrefab, brickPositionIterator, Quaternion.identity, null);
+                brickInstance.name = brickPrefab.name;
                 brickPositionIterator.x += brickWidth + brickWidthBuffer;
             }
             brickPositionIterator.x = brickStartPosition.transform.position.x;

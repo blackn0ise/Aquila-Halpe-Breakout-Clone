@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Paddle
+  - Ball
+  - Wall
+  - KillZone
+  - Brick
+  - Ceiling
   layers:
   - Default
   - TransparentFX
