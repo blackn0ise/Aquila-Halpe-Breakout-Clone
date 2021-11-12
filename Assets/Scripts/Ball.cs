@@ -15,13 +15,15 @@ public class Ball : MonoBehaviour
 	[SerializeField] float startingSpeedFactor = 50;
 	[SerializeField] float _startCone = 0.3f;
 	private GameManager _gameManager;
-    private Transform _paddle;
+    private Paddle _paddle;
+	private Vector2 _initialPosition;
 
 	// Start is called before the first frame update
 	void Start()
     {
+		_initialPosition = transform.position;
 		_gameManager = FindObjectOfType<GameManager>();
-		_paddle = FindObjectOfType<Paddle>().transform;
+		_paddle = FindObjectOfType<Paddle>();
 	}
 
 	// Update is called once per frame
@@ -55,6 +57,23 @@ public class Ball : MonoBehaviour
 		{
 			ReverseDirection(Directions.Vertical);
 		}
+		else if (collision.gameObject.CompareTag("KillZone"))
+		{
+			Respawn();
+		}
+	}
+
+	private void Respawn()
+	{
+		RepositionSelfAndPaddle();
+		_gameManager.RestartGame();
+	}
+
+	private void RepositionSelfAndPaddle()
+	{
+		_rigidbody.velocity = Vector2.zero;
+		_paddle.ResetPosition();
+		transform.position = _initialPosition;
 	}
 
 	private void ReverseDirection(Directions direction)
@@ -81,20 +100,15 @@ public class Ball : MonoBehaviour
 		if (_gameManager.GetGameState() == GameState.Pregame)
 		{
 			Vector2 newPosition = transform.position;
-			newPosition.x = _paddle.position.x;
+			newPosition.x = _paddle.transform.position.x;
 			transform.position = newPosition;
 		}
 	}
 
 	internal void Fire()
 	{
-		if (_gameManager.GetGameState() == GameState.Pregame)
-		{
-			_gameManager.SetGameState(GameState.Game);
-			Vector2 direction = new Vector2(UnityEngine.Random.Range(-_startCone, _startCone), UnityEngine.Random.Range(0, 1.0f));
-			Debug.Log(direction);
-			_rigidbody.AddForce(direction * startingSpeedFactor); 
-		}
-
+		Vector2 direction = new Vector2(UnityEngine.Random.Range(-_startCone, _startCone), UnityEngine.Random.Range(0, 1.0f));
+		Debug.Log(direction);
+		_rigidbody.AddForce(direction * startingSpeedFactor); 
 	}
 }

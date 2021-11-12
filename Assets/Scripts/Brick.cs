@@ -5,7 +5,15 @@ using UnityEngine;
 
 public class Brick : MonoBehaviour
 {
-    public void DeleteSelf()
+	[SerializeField] private int scoreValue = 100;
+	private GameManager _gameManager;
+
+	private void Start()
+	{
+		_gameManager = GameManager.GetGameManager();
+	}
+
+	public void DeleteSelf()
 	{
 		AwardPoints();
 		Destroy(gameObject);
@@ -13,6 +21,7 @@ public class Brick : MonoBehaviour
 
 	private void AwardPoints()
 	{
-		Debug.Log("YouGetPoint");
+		_gameManager.SetScore(_gameManager.GetScore() + scoreValue);
+		_gameManager.SetScoreText("Score = " + _gameManager.GetScore().ToString());
 	}
 }
