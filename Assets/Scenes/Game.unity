@@ -288,10 +288,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4868472450113856232, guid: 239cca277ef498248946a9702b4982ae, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5340984305564774086, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_Name
       value: Wall2
@@ -301,12 +297,16 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 8.574306
+      objectReference: {fileID: 0}
+    - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_LocalScale.y
       value: 8.928274
       objectReference: {fileID: 0}
     - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.0824
+      value: 12.5071
       objectReference: {fileID: 0}
     - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_LocalPosition.y
@@ -530,17 +530,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1434728258 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5797674158212120547, guid: 35852d2cb2f9141499ff404eb1f76ffb, type: 3}
-  m_PrefabInstance: {fileID: 2655139012746042896}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: afd9b2caef3dce7418f292246353421d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1531715943
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -640,43 +629,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1943555583 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6038166640694976224, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-  m_PrefabInstance: {fileID: 6038166638843695903}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1943555584
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943555583}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!114 &1943555586 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6038166640694975773, guid: 561fe46195fd42d45b162169378f5862, type: 3}
   m_PrefabInstance: {fileID: 6038166638843695903}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1943555583}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee74eded5f7974c4e9bce8adf175d696, type: 3}
@@ -847,10 +805,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 390498101256118400, guid: 35852d2cb2f9141499ff404eb1f76ffb, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2090022138809087826, guid: 35852d2cb2f9141499ff404eb1f76ffb, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -899,10 +853,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    - target: {fileID: 5797674158212120547, guid: 35852d2cb2f9141499ff404eb1f76ffb, type: 3}
-      propertyPath: startingSpeedFactor
-      value: 600
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 35852d2cb2f9141499ff404eb1f76ffb, type: 3}
 --- !u!1001 &6038166638843695903
@@ -918,48 +868,44 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
       propertyPath: m_ActionEvents.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionId
-      value: ead01f0d-b704-4237-b890-4046d4e72e61
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionId
+      value: c6a16720-86c1-45f6-b5bd-83a6f86b3332
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_ActionName
-      value: Game/FireBall[/Keyboard/space]
+      propertyPath: m_ActionEvents.Array.data[2].m_ActionName
+      value: Game/Restart[/Keyboard/r]
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.size
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
-      value: 0
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1943555586}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: OnBallFired
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnRestartPressed
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Paddle, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6038166640694975772, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
-    - target: {fileID: 6038166640694975773, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: ball
-      value: 
-      objectReference: {fileID: 1434728258}
     - target: {fileID: 6038166640694975774, guid: 561fe46195fd42d45b162169378f5862, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1008,10 +954,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Paddle
       objectReference: {fileID: 0}
-    - target: {fileID: 6038166640694976224, guid: 561fe46195fd42d45b162169378f5862, type: 3}
-      propertyPath: m_TagString
-      value: Paddle
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 561fe46195fd42d45b162169378f5862, type: 3}
 --- !u!1001 &7560571789953729745
@@ -1031,7 +973,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.7249
+      value: 7.981112
       objectReference: {fileID: 0}
     - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_LocalScale.y
@@ -1039,7 +981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.0824
+      value: -12.2105
       objectReference: {fileID: 0}
     - target: {fileID: 8740273825605163450, guid: 239cca277ef498248946a9702b4982ae, type: 3}
       propertyPath: m_LocalPosition.y

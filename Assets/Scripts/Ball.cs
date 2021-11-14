@@ -13,6 +13,7 @@ public class Ball : MonoBehaviour
 	
 	[SerializeField] Rigidbody2D _rigidbody = default;
 	[SerializeField] float startingSpeedFactor = 50;
+	[SerializeField] float speedIncreaseFactor = 1.01f;
 	[SerializeField] float _startCone = 0.3f;
 	private GameManager _gameManager;
     private Paddle _paddle;
@@ -48,6 +49,7 @@ public class Ball : MonoBehaviour
 			ReverseDirection(Directions.Vertical);
 			Brick brick = collision.gameObject.GetComponent<Brick>();
 			brick.DeleteSelf();
+			_rigidbody.velocity *= speedIncreaseFactor;
 		}
 		else if (collision.gameObject.CompareTag("Wall"))
 		{
@@ -63,7 +65,7 @@ public class Ball : MonoBehaviour
 		}
 	}
 
-	private void Respawn()
+	public void Respawn()
 	{
 		RepositionSelfAndPaddle();
 		_gameManager.RestartGame();
@@ -109,6 +111,6 @@ public class Ball : MonoBehaviour
 	{
 		Vector2 direction = new Vector2(UnityEngine.Random.Range(-_startCone, _startCone), UnityEngine.Random.Range(0, 1.0f));
 		Debug.Log(direction);
-		_rigidbody.AddForce(direction * startingSpeedFactor); 
+		_rigidbody.AddForce(direction.normalized * startingSpeedFactor); 
 	}
 }

@@ -99,7 +99,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 9102418254225477410}
-  startingSpeedFactor: 630
+  startingSpeedFactor: 200
+  speedIncreaseFactor: 1.02
   _startCone: 0.3
 --- !u!50 &9102418254225477410
 Rigidbody2D:
