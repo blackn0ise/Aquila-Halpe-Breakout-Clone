@@ -10,7 +10,8 @@ public enum Directions
 
 public class Ball : MonoBehaviour
 {
-	
+
+	[SerializeField] Transform spriteBody = default;
 	[SerializeField] Rigidbody2D _rigidbody = default;
 	[SerializeField] float startingSpeedFactor = 50;
 	[SerializeField] float speedIncreaseFactor = 1.01f;
@@ -109,6 +110,10 @@ public class Ball : MonoBehaviour
 			newPosition.x = paddles[0].transform.position.x;
 			transform.position = newPosition;
 		}
+		Quaternion newRotation = spriteBody.rotation;
+		//newRotation.SetEulerRotation(newRotation.eulerAngles.x, newRotation.eulerAngles.y, newRotation.eulerAngles.z + 10);
+		//transform.rotation = newRotation;
+		spriteBody.Rotate(transform.forward, 10);
 	}
 
 	internal void Fire()

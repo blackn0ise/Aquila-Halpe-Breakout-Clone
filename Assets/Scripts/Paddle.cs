@@ -1,10 +1,11 @@
+using Mirror;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Paddle : MonoBehaviour
+public class Paddle : NetworkBehaviour
 {
 	[SerializeField] private float speed = 0.05f;
 	[SerializeField] private float clampWidth = 8.0f;
@@ -23,7 +24,7 @@ public class Paddle : MonoBehaviour
 
 	public void OnMouseMovement(InputAction.CallbackContext value)
 	{
-		if (Time.time > 0.5f) //input delay on start to prevent startup reads from mouse
+		if (Time.time > 0.5f && isLocalPlayer) //input delay on start to prevent startup reads from mouse
 		{
 			Vector2 newPosition = transform.position;
 			newPosition.x += value.ReadValue<Vector2>().x * speed;
