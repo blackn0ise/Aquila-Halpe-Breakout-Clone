@@ -35,9 +35,9 @@ public class Paddle : NetworkBehaviour
 
 	public void OnBallFired(InputAction.CallbackContext value)
 	{
-		if (_gameManager.GetGameState() == GameState.Pregame)
+		if (GameManager.GetGameState() == GameState.Pregame)
 		{
-			_gameManager.SetGameState(GameState.Game);
+			GameManager.SetGameState(GameState.Game);
 			_ball.Fire();
 		}
 	}

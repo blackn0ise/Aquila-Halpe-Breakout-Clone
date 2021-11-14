@@ -22,7 +22,6 @@ public class Brick : NetworkBehaviour
 
 	private void AwardPoints()
 	{
-		_gameManager.SetScore(_gameManager.GetScore() + scoreValue);
-		_gameManager.SetScoreText("Score = " + _gameManager.GetScore().ToString());
+		GameManager.SetScore(GameManager.GetScore() + scoreValue);
 	}
 }

@@ -105,15 +105,13 @@ public class Ball : NetworkBehaviour
 
 	private void UpdatePosition()
 	{
-		if (paddles.Count > 0 && _gameManager.GetGameState() == GameState.Pregame)
+		if (paddles.Count > 0 && GameManager.GetGameState() == GameState.Pregame)
 		{
 			Vector2 newPosition = transform.position;
 			newPosition.x = paddles[0].transform.position.x;
 			transform.position = newPosition;
 		}
 		Quaternion newRotation = spriteBody.rotation;
-		//newRotation.SetEulerRotation(newRotation.eulerAngles.x, newRotation.eulerAngles.y, newRotation.eulerAngles.z + 10);
-		//transform.rotation = newRotation;
 		spriteBody.Rotate(transform.forward, 10);
 	}
 
