@@ -514,8 +514,14 @@ MonoBehaviour:
   brickStartPosition: {fileID: 1704464787}
   brickColumns: 12
   brickRows: 5
-  brickWidthBuffer: 1.3
+  brickWidthBuffer: 1.35
   brickHeightBuffer: 0.5
+  brickColours:
+  - {r: 0.509434, g: 0.6792453, b: 0.6631632, a: 1}
+  - {r: 0.47472408, g: 0.7924528, b: 0.76289666, a: 1}
+  - {r: 0.3890174, g: 0.8867924, b: 0.8437748, a: 1}
+  - {r: 0.38823533, g: 0.8862745, b: 0.7199798, a: 1}
+  - {r: 0.2325116, g: 0.8962264, b: 0.50115687, a: 1}
 --- !u!4 &1379959666
 Transform:
   m_ObjectHideFlags: 0
@@ -623,7 +629,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704464787}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.28, y: 3.57, z: 0}
+  m_LocalPosition: {x: -7.43, y: 3.57, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

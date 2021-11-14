@@ -47,7 +47,7 @@ public class Ball : MonoBehaviour
 		else if (collision.gameObject.CompareTag("Brick"))
 		{
 			ReverseDirection(Directions.Vertical);
-			Brick brick = collision.gameObject.GetComponent<Brick>();
+			Brick brick = collision.gameObject.GetComponentInParent<Brick>();
 			brick.DeleteSelf();
 			_rigidbody.velocity *= speedIncreaseFactor;
 		}

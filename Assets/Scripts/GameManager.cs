@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int brickRows = 5;
     [SerializeField] private float brickWidthBuffer = 0.2f;
     [SerializeField] private float brickHeightBuffer = 0.2f;
+    [SerializeField] private Color[] brickColours = default;
     private GameState currentState = GameState.Pregame;
     private float _brickWidth = 1;
     private float _brickHeight = 1;
@@ -68,6 +69,7 @@ public class GameManager : MonoBehaviour
                 GameObject brickInstance = Instantiate(brickPrefab, brickPositionIterator, Quaternion.identity, null);
                 brickInstance.name = brickPrefab.name;
                 brickPositionIterator.x += _brickWidth + brickWidthBuffer;
+                brickInstance.GetComponent<SpriteRenderer>().color = brickColours[i];
             }
             brickPositionIterator.x = brickStartPosition.transform.position.x;
             brickPositionIterator.y -= _brickHeight / 2 + brickHeightBuffer;
@@ -76,7 +78,8 @@ public class GameManager : MonoBehaviour
 
     private void SetBrickDimensions()
 	{
-        _brickWidth = brickPrefab.GetComponent<BoxCollider2D>().bounds.extents.x;
-        _brickHeight = brickPrefab.GetComponent<BoxCollider2D>().bounds.extents.y;
+        var brickCollider = brickPrefab.GetComponentInChildren<BoxCollider2D>();
+        _brickWidth = brickCollider.bounds.extents.x;
+        _brickHeight = brickCollider.bounds.extents.y;
     }
 }

@@ -58,6 +58,17 @@
                 },
                 {
                     "name": "",
+                    "id": "0e69668a-d4e8-4816-8cf6-51e49c31d85b",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "FireBall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "4425d0e6-0cee-46ca-ae7a-e3614641fd73",
                     "path": "<Keyboard>/r",
                     "interactions": "",
