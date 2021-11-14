@@ -16,6 +16,7 @@ public class Paddle : MonoBehaviour
 	void Start()
     {
 		_ball = FindObjectOfType<Ball>();
+		_ball.paddles.Add(this);
 		_initialPosition = transform.position;
 		_gameManager = GameManager.GetGameManager();
 	}

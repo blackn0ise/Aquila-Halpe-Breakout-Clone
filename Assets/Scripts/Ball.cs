@@ -15,8 +15,8 @@ public class Ball : MonoBehaviour
 	[SerializeField] float startingSpeedFactor = 50;
 	[SerializeField] float speedIncreaseFactor = 1.01f;
 	[SerializeField] float _startCone = 0.3f;
+	public List<Paddle> paddles { get; set; }
 	private GameManager _gameManager;
-    private Paddle _paddle;
 	private Vector2 _initialPosition;
 
 	// Start is called before the first frame update
@@ -24,7 +24,7 @@ public class Ball : MonoBehaviour
     {
 		_initialPosition = transform.position;
 		_gameManager = FindObjectOfType<GameManager>();
-		_paddle = FindObjectOfType<Paddle>();
+		paddles = new List<Paddle>();
 	}
 
 	// Update is called once per frame
@@ -74,8 +74,12 @@ public class Ball : MonoBehaviour
 	private void RepositionSelfAndPaddle()
 	{
 		_rigidbody.velocity = Vector2.zero;
-		_paddle.ResetPosition();
 		transform.position = _initialPosition;
+		if (paddles.Count > 0)
+			foreach(Paddle paddle in paddles)
+			{
+				paddle.ResetPosition();
+			}
 	}
 
 	private void ReverseDirection(Directions direction)
@@ -99,18 +103,17 @@ public class Ball : MonoBehaviour
 
 	private void UpdatePosition()
 	{
-		if (_gameManager.GetGameState() == GameState.Pregame)
+		if (paddles.Count > 0 && _gameManager.GetGameState() == GameState.Pregame)
 		{
 			Vector2 newPosition = transform.position;
-			newPosition.x = _paddle.transform.position.x;
+			newPosition.x = paddles[0].transform.position.x;
 			transform.position = newPosition;
 		}
 	}
 
 	internal void Fire()
 	{
-		Vector2 direction = new Vector2(UnityEngine.Random.Range(-_startCone, _startCone), UnityEngine.Random.Range(0, 1.0f));
-		Debug.Log(direction);
-		_rigidbody.AddForce(direction.normalized * startingSpeedFactor); 
+		Vector2 direction = new Vector2(UnityEngine.Random.Range(-_startCone, _startCone), 0.5f);
+		_rigidbody.AddForce(direction * startingSpeedFactor); 
 	}
 }
