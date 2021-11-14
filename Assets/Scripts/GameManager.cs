@@ -1,3 +1,4 @@
+using Mirror;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ public enum GameState
     Game
 }
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     [SerializeField] private GameObject brickPrefab = default;
     [SerializeField] private TextMeshProUGUI scoreText = default;
@@ -36,6 +37,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         instance = this;
+        Screen.SetResolution(1920, 1080, true);
         SetScoreText("Score = 0");
         SetBrickDimensions();
         CreateBricks();

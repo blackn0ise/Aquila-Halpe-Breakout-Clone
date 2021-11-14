@@ -1,3 +1,4 @@
+using Mirror;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ public enum Directions
 	Horizontal, Vertical
 }
 
-public class Ball : MonoBehaviour
+public class Ball : NetworkBehaviour
 {
 
 	[SerializeField] Transform spriteBody = default;

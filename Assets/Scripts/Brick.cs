@@ -1,9 +1,10 @@
+using Mirror;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Brick : MonoBehaviour
+public class Brick : NetworkBehaviour
 {
 	[SerializeField] private int scoreValue = 100;
 	private GameManager _gameManager;
